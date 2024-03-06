@@ -1,4 +1,4 @@
-# Fundamentals of Software Development (PDS) - PUCRS
+# Fundamentals of Software Development (FSD) - PUCRS
 
 ## Course Overview
 - **Title**: Fundamentals of Software Development
