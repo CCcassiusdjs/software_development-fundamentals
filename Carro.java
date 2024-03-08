@@ -10,6 +10,12 @@ public class Carro {
         tanque = new TanqueCombustivel(tipoCombustivel, capacidadeTanque);
     }
 
+    public void upgradeMotorParaFlex() {
+        if(this.motor.getTipoMotor() != TipoCombustivel.FLEX) {
+            this.motor.setTipoMotor(TipoCombustivel.FLEX);
+        }
+    }
+
     public String getModelo() {
         return modelo;
     }

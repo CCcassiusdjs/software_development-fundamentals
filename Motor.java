@@ -9,6 +9,11 @@ public class Motor {
         this.consumo = consumo;
     }
 
+     // Método para alterar o tipo de combustível do motor
+     public void setTipoMotor(TipoCombustivel novoTipo) {
+        this.tipoMotor = novoTipo;
+    }
+
     public int getConsumo() {
         return this.consumo;
     }
