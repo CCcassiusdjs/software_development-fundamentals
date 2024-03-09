@@ -6,6 +6,7 @@ public class Motor {
     private int quilometragem;
     private int consumo;
 
+
     public Motor(TipoCombustivel tipoMotor, int consumoGasolina, int consumoAlcool) {
         this.tipoMotor = tipoMotor;
         this.consumoGasolina = consumoGasolina;
@@ -17,6 +18,7 @@ public class Motor {
     }
 
     public int getConsumo() {
+    
         // Assegura que o consumo nunca seja zero
         if (tipoMotor == TipoCombustivel.GASOLINA) {
             return consumoGasolina > 0 ? consumoGasolina : 1;
