@@ -24,22 +24,10 @@ public class TanqueCombustivel {
 
     // Retorna false se o tipo de combustivel for incompativel ou se a quantidade
     // for maior que a capacidade livre
-    public boolean abastece(TipoCombustivel tipoCombustivel, int quantidade) {
-        if (tipoCombustivel != this.tipoCombustivel) {
-            if (this.tipoCombustivel == TipoCombustivel.FLEX) {
-                if (!(tipoCombustivel == TipoCombustivel.GASOLINA || tipoCombustivel == TipoCombustivel.ALCOOL)) {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        }
-        if (getCombustivelDisponivel() + quantidade > getCapacidade()) {
-            return false;
-        } else {
-            combustivelDisponivel += quantidade;
-            return true;
-        }
+    public void abastece(TipoCombustivel tipoCombustivel, int quantidade) {
+        // Assumindo que o tanque sempre terá o combustível do último abastecimento
+        this.tipoCombustivel = tipoCombustivel;
+        this.combustivelDisponivel = Math.min(quantidade, capacidade);
     }
 
     public boolean gasta(int quantidade) {

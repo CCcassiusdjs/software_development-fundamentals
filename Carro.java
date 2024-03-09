@@ -10,6 +10,12 @@ public class Carro {
         tanque = new TanqueCombustivel(tipoCombustivel, capacidadeTanque);
     }
 
+    public Carro(String modelo, TipoCombustivel tipoCombustivel, int consumoGasolina, int consumoAlcool, int capacidadeTanque) {
+        this.modelo = modelo;
+        motor = new Motor(tipoCombustivel, consumoGasolina, consumoAlcool);
+        tanque = new TanqueCombustivel(tipoCombustivel, capacidadeTanque);
+    }
+
     public void upgradeMotorParaFlex() {
         if(this.motor.getTipoMotor() != TipoCombustivel.FLEX) {
             this.motor.setTipoMotor(TipoCombustivel.FLEX);
@@ -18,6 +24,14 @@ public class Carro {
 
     public String getModelo() {
         return modelo;
+    }
+
+    public void setConsumo(TipoCombustivel tipoCombustivel) {
+        if (tipoCombustivel == TipoCombustivel.ALCOOL) {
+            motor.setConsumo(motor.getConsumo(), TipoCombustivel.ALCOOL);
+        }else if (tipoCombustivel == TipoCombustivel.GASOLINA) {
+            motor.setConsumo(motor.getConsumo(), TipoCombustivel.GASOLINA);
+        }
     }
 
     public int getCombustivelDisponivel() {
